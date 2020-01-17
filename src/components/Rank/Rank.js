@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Rank = ({name, entries}) => {
 	return (
 		<div>
@@ -12,6 +11,6 @@ const Rank = ({name, entries}) => {
 			</div>				
 		</div>
 	);
-}
+};
 
 export default Rank;

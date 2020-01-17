@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class Signin extends React.Component {
 	constructor(props){
 		super(props);
@@ -35,6 +34,12 @@ class Signin extends React.Component {
 		})		
 	}
 
+	keyPressed = (event) => {
+		if (event.key === 'Enter') {
+			this.onSubmitSignIn();
+		}
+	}
+
 	render () {
 		const {onRouteChange} = this.props;
 		return (
@@ -45,9 +50,10 @@ class Signin extends React.Component {
 				      <legend className="f1 fw6 ph0 mh0">Sign In</legend>
 				      <div className="mt3">
 				        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-				        <input 
+						<input 
+							onKeyPress={this.keyPressed} 
 					        onChange={this.onEmailChange} 
-					        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+					        className="pa2 input-reset ba bg-transparent hover-white w-100" 
 					        type="email" 
 					        name="email-address"  
 					        id="email-address"
@@ -55,9 +61,10 @@ class Signin extends React.Component {
 				      </div>
 				      <div className="mv3">
 				        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-				        <input 
+						<input 
+						    onKeyPress={this.keyPressed} 
 					        onChange={this.onPasswordChange} 
-					        className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+					        className="b pa2 input-reset ba bg-transparent hover-white w-100" 
 					        type="password" 
 					        name="password"  
 					        id="password"
@@ -79,6 +86,6 @@ class Signin extends React.Component {
 			</article>
 		)	
 	}	
-}
+};
 
 export default Signin;

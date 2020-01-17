@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class Register extends React.Component {
 	constructor(props){
 		super(props);
@@ -42,6 +41,12 @@ class Register extends React.Component {
 		})		
 	}
 
+	keyPressed = (event) => {
+		if (event.key === 'Enter') {
+			this.onSubmitSignIn();
+		}
+	}
+
 	render(){		
 		return (
 			<article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">				
@@ -51,8 +56,9 @@ class Register extends React.Component {
 				      <legend className="f1 fw6 ph0 mh0">Register</legend>
 				      <div className="mt3">
 				        <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
-				        <input 
-				        	className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+						<input 
+							onKeyPress={this.keyPressed}
+				        	className="pa2 input-reset ba bg-transparent hover-white w-100" 
 				        	type="text" 
 				        	name="name"  
 				        	id="name"
@@ -61,8 +67,9 @@ class Register extends React.Component {
 				      </div>
 				      <div className="mt3">
 				        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-				        <input 
-				        	className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+						<input 
+							onKeyPress={this.keyPressed}
+				        	className="pa2 input-reset ba bg-transparent hover-white w-100" 
 				        	type="email" 
 				        	name="email-address"  
 				        	id="email-address"
@@ -71,8 +78,9 @@ class Register extends React.Component {
 				      </div>
 				      <div className="mv3">
 				        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-				        <input 
-				        	className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+						<input 
+							onKeyPress={this.keyPressed}
+				        	className="b pa2 input-reset ba bg-transparent hover-white w-100" 
 				        	type="password" 
 				        	name="password"  
 				        	id="password"
@@ -92,6 +100,6 @@ class Register extends React.Component {
 			</article>	
 		);
 	}	
-}
+};
 
 export default Register;
