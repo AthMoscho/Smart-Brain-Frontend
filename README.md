@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Smart Brain
 
-## Available Scripts
+A Full-Stack Face Recognition App that uses:
 
-In the project directory, you can run:
+-HTML, CSS, JavaScript and React at the front-end.
 
-### `npm start`
+-Node.js with Express.js as a back-end server.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-Knex.js to connect to the database.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+-PostgreSQL as a database.
 
-### `npm test`
+-BCrypt for passwords.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-Clarifai API to detect multiple faces on images.
 
-### `npm run build`
+Front-end soucre code above.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Back-end source code at: https://github.com/AthMoscho/Smart-Brain-Backend/
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Fully deployed application at Heroku: https://athanmosh.herokuapp.com/ 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# How to use:
 
-### `npm run eject`
+First you have to register. Click the 'Registration' button at the top right corner or below the Sign In button. Put in your Name that will be displayed while using the app, then put in your Email and Password. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You will have to use these credentials to login next time you use this app. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Once you successfully create your account, the main application page appears. There you can put a link that directs to a single image. (Example link: https://edubloxtutor.staticscdn.com/wp-content/uploads/2017/07/Faces.jpg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+All faces in the image will be recognized and be displayed inside boxes, also your score will update. Each time you put in an image and a face is recognized, your score will be updated. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Once your done, you can come back again and use this application with the account you previously made. Your score will remain intact and ready to grow!
 
-## Learn More
+<p align="center">
+  <img width="auto" height="auto" src="https://i.ibb.co/gy0FprM/sign-in.png">
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="center">
+  <img width="auto" height="auto" src="https://i.ibb.co/djnWVWR/faceapp.png">
+</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
