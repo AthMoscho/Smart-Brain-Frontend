@@ -5,7 +5,8 @@ class Signin extends React.Component {
 		super(props);
 		this.state= {
 			signInEmail:'',
-			signInPassword:''
+			signInPassword:'',
+			errorMessage: ''
 		}
 	}
 	onEmailChange = (event) => {
@@ -25,16 +26,22 @@ class Signin extends React.Component {
 				password: this.state.signInPassword
 			})
 		})	
-		.then(response => response.json())
+		.then(response => {
+			if(response.ok) {
+				return response.json()
+			}
+			return response.json().then((body) => {
+				throw new Error(body.error);
+			  })
+			
+		})
 		.then(user => {
 			if(user.id) {
 				this.props.loadUser(user);
 				this.props.onRouteChange('home')
 			}
 		})
-		.catch((e) => {
-			console.log(e)
-		})	
+		.catch(err => this.setState({errorMessage: err.message}))	
 	}
 
 	keyPressed = (event) => {
@@ -44,6 +51,7 @@ class Signin extends React.Component {
 	}
 
 	render () {
+		const { errorMessage } = this.state;
 		const {onRouteChange} = this.props;
 		return (
 			<article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">				
@@ -72,7 +80,8 @@ class Signin extends React.Component {
 					        name="password"  
 					        id="password"
 				        />
-				      </div>			    
+				      </div>
+					{errorMessage && <div className="b ph3 pv2">{errorMessage}</div>}			    
 				    </fieldset>
 				    <div className="">
 				      <input
@@ -87,6 +96,7 @@ class Signin extends React.Component {
 				  </div>
 				</main>
 			</article>
+			
 		)	
 	}	
 };
