@@ -56,33 +56,36 @@ class Signin extends React.Component {
 		return (
 			<article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">				
 				<main className="pa4 black-80">
-				  <div className="measure">
-				    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-				      <legend className="f1 fw6 ph0 mh0">Sign In</legend>
-				      <div className="mt3">
-				        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-						<input 
-							onKeyPress={this.keyPressed} 
-					        onChange={this.onEmailChange} 
-					        className="pa2 input-reset ba bg-transparent hover-white w-100" 
-					        type="email" 
-					        name="email-address"  
-					        id="email-address"
-				        />
-				      </div>
-				      <div className="mv3">
-				        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-						<input 
-						    onKeyPress={this.keyPressed} 
-					        onChange={this.onPasswordChange} 
-					        className="b pa2 input-reset ba bg-transparent hover-white w-100" 
-					        type="password" 
-					        name="password"  
-					        id="password"
-				        />
-				      </div>
-					{errorMessage && <div className="b ph3 pv2">{errorMessage}</div>}			    
-				    </fieldset>
+					<div className="measure">
+						<form>
+							<fieldset id="sign_up" className="ba b--transparent ph0 mh0">
+							<legend className="f1 fw6 ph0 mh0">Sign In</legend>
+							<div className="mt3">
+								<label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
+								<input 
+									onKeyPress={this.keyPressed} 
+									onChange={this.onEmailChange} 
+									className="pa2 input-reset ba bg-transparent hover-white w-100" 
+									type="email" 
+									name="email-address"  
+									id="email-address"
+								/>
+							</div>
+							<div className="mv3">
+								<label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
+								<input 
+									onKeyPress={this.keyPressed} 
+									onChange={this.onPasswordChange} 
+									className="b pa2 input-reset ba bg-transparent hover-white w-100" 
+									type="password" 
+									name="password"  
+									id="password"
+									autoComplete="off"
+								/>
+							</div>
+							{errorMessage && <div className="b ph3 pv2">{errorMessage}</div>}			    
+							</fieldset>
+						</form>
 				    <div className="">
 				      <input
 				    	onClick={this.onSubmitSignIn} 
@@ -96,7 +99,6 @@ class Signin extends React.Component {
 				  </div>
 				</main>
 			</article>
-			
 		)	
 	}	
 };
